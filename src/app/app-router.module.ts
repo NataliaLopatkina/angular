@@ -1,14 +1,34 @@
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { Page1 } from '../components/page1/page1.component';
-import { Page2 } from '../components/page2/page2.component';
+import { SignIn } from '../components/sign-in/sign-in.component';
+import { SignUp } from '../components/sign-up/sign-up.component';
+import { HomeComponent } from '../components/home/home.component';
+import { MyPostsComponent } from '../components/my-posts/my-posts.component';
+import { FriendsPostsComponent } from '../components/friends-posts/friends-posts.component';
+import { AddPostComponent } from '../components/add-post/add-post.component';
 
 const routes: Routes = [
     {
-        path: 'page-one', component: Page1
+        path: '', component: SignIn
     },
     {
-        path: 'page-two', component: Page2
+        path: 'sign-up', component: SignUp
+    },
+
+    {
+        path: 'home', component: HomeComponent
+    },
+
+    {
+        path: 'my-posts', component: MyPostsComponent
+    },
+
+    {
+        path: 'friends-posts', component: FriendsPostsComponent
+    },
+
+    {
+        path: 'add-post', component: AddPostComponent,
     }
 ]
     

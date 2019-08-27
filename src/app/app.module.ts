@@ -2,17 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AppRouterModule } from './app-router.module';
 import { ChildComponent } from '../components/Child/child.component';
-import { Page1 } from '../components/page1/page1.component';
-import { Page2 } from '../components/page2/page2.component';
-import {AppRouterModule} from './app-router.module';
+import { SignIn } from '../components/sign-in/sign-in.component';
+import { SignUp } from '../components/sign-up/sign-up.component';
+import { HomeComponent } from '../components/home/home.component';
+import { MyPostsComponent } from '../components/my-posts/my-posts.component';
+import { FriendsPostsComponent } from '../components/friends-posts/friends-posts.component';
+import { AddPostComponent } from '../components/add-post/add-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChildComponent,
-    Page1,
-    Page2
+    SignIn,
+    SignUp,
+    HomeComponent,
+    MyPostsComponent,
+    FriendsPostsComponent,
+    AddPostComponent,
   ],
   imports: [
     BrowserModule,
