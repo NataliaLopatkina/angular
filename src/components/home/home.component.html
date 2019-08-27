@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Blog</title>
+    <link href="https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+</head>
+
+<body class="page">
+    <div class="page__container">
+        <header class="header">
+            <div class="box">
+                <div class="header__content"><button class="button-menu header__button-menu" type="button"><span
+                            class="button-menu__line"></span></button>
+                    <p class="header__user">Hi, </p>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="box">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" [routerLink]="['/my-posts']">My posts</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" [routerLink]="['/friends-posts']">Friends posts</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" [routerLink]="['/add-post']">Add post</a>
+                        </li>
+                    </ul>
+                </nav><!-- END .nav-->
+                <div class="search-content">
+                    <div class="form search search-content__form">
+                        <form class="search__form" onsubmit="return false" novalidate=""><input
+                                class="search__input form__input" type="text" id="search" placeholder="Search"
+                                required=""><button class="button search__button" type="submit">Search</button><span
+                                class="error">This field is require!</span></form>
+                    </div><!-- END .search-->
+                    <div class="sort posts-content__sort"><button class="button sort__button">↑ ↓</button></div>
+                    <div class="users"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="javascripts/notification.js"></script>
+    <script src="javascripts/user.js"></script>
+    <script src="javascripts/menu.js"></script>
+    <script src="javascripts/home.js"></script>
+</body>
+
+</html>
+
