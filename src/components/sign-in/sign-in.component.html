@@ -16,21 +16,19 @@
             <div class="box">
                 <div class="authentication page__authentication">
                     <div class="form">
-                        <form class="form__content" onsubmit="return false" novalidate="">
+                        <form class="form__content" onsubmit="return false">
                             <h1 class="form__title">Sign-in</h1>
                             <div class="form__item">
                                 <label class="form__label" for="email">Login or email</label>
-                                <input class="form__input" type="email" id="email" placeholder="john@yandex.ru"
-                                    required="">
+                                <input class="form__input" type="email" id="email" placeholder="john@yandex.ru" required>
                                 <span class="error">Email is require!</span>
                             </div>
                             <div class="form__item">
                                 <label class="form__label" for="password">Password</label>
                                 <div class="form__password">
-                                    <input class="form__input" type="password" id="password"
-                                        placeholder="12345678" minlength="6" required="">
+                                    <input class="form__input" type="password" id="password" placeholder="12345678" minlength="6" required>
                                     <span class="error">Password is require!</span>
-                                    <button class="form__password-button" button="type">
+                                    <button class="form__password-button" button="submit">
                                         <!-- <img class="form__password-img" src="images/svg-icon/eye.svg"
                                             alt="Show password"> -->
                                     </button>
@@ -39,21 +37,19 @@
                             </div>
                             <button class="button form__button-send" type="submit">
                                 <p class="button__text">Send</p>
-                            </button><!-- END .button-->
+                            </button>
+                            <!-- END .button-->
                         </form>
                     </div><!-- END .form-->
                     <div class="registration">
                         <p class="registration__text">Create your own profile</p>
                             <a class="button" [routerLink]="['sign-up']">Sign-up</a>
-                    </div><!-- END .registration-->
+                    </div>
+                    <!-- END .registration-->
                 </div>
             </div>
         </main>
     </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="javascripts/notification.js"></script>
-    <script src="javascripts/validation.js"></script>
-    <script src="javascripts/sign-in.js"></script>
 </body>
 
 </html>

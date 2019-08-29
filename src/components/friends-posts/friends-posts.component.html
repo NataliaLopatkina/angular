@@ -11,81 +11,22 @@
 
 <body class="page">
     <div class="page__container">
-        <header class="header">
-            <div class="box">
-                <div class="header__content"><button class="button-menu header__button-menu" type="button"><span
-                            class="button-menu__line"></span></button>
-                    <p class="header__user">Hi,</p>
-                </div>
-            </div>
-        </header>
+        <app-header></app-header>
         <main class="main">
             <div class="box">
                 <div class="posts">
-                    <nav class="nav">
-                        <ul class="nav__list">
-                            <li class="nav__item">
-                                <a class="nav__link" [routerLink]="['/home']">Нome</a>
-                            </li>
-                            <li class="nav__item">
-                                <a class="nav__link" [routerLink]="['/my-posts']">My posts</a>
-                            </li>
-                            <li class="nav__item nav__item--active">
-                                <a class="nav__link" [routerLink]="['/friends-posts']">Friends posts</a>
-                            </li>
-                            <li class="nav__item">
-                                <a class="nav__link" [routerLink]="['/add-post']">Add post</a>
-                            </li>
-                        </ul>
-                    </nav><!-- END .nav-->
+                    <app-nav></app-nav>
                     <div class="posts-content">
-                        <div class="sort posts-content__sort"><button class="button sort__button">↑ ↓</button></div>
+                        <div class="sort posts-content__sort">
+                            <button class="button sort__button">↑ ↓</button>
+                        </div>
                         <div class="posts-list">
-                            <div class="posts-item"><a class="posts-item__title">State of the art JavaScript</a>
-                                <p class="posts-item__text">TypeScript offers support for the latest and evolving
-                                    JavaScript features, including those from ECMAScript 2015 and future proposals, like
-                                    async functions and decorators, to help build robust components.<br><br>These ...
-                                </p>
-                                <p class="posts-item__autor">Posted by Alexei</p><time
-                                    class="posts-item__text">2019-08-16</time>
-                            </div>
-                            <div class="posts-item"><a class="posts-item__title">Sequelize</a>
-                                <p class="posts-item__text">Sequelize is a promise-based Node.js ORM for Postgres,
-                                    MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction
-                                    support, relations, eager and lazy loading, read replication and more.</p>
-                                <p class="posts-item__autor">Posted by Alexei</p><time
-                                    class="posts-item__text">2019-08-19</time>
-                            </div>
-                            <div class="posts-item"><a class="posts-item__title">title</a>
-                                <p class="posts-item__text">text</p>
-                                <p class="posts-item__autor">Posted by Sara</p><time
-                                    class="posts-item__text">2019-08-21</time>
-                            </div>
-                            <div class="posts-item"><a class="posts-item__title">Area Chart Example</a>
-                                <p class="posts-item__text">
-                                    search-content__button-sortsearch-content__button-sortsearch-content__button-sortsearch-content__button-sortsearch-content__button-sortsearch-content__button-sortsearch-content__button-sortsearch-content__butto
-                                    ...</p>
-                                <p class="posts-item__autor">Posted by Sara</p><time
-                                    class="posts-item__text">2019-08-22</time>
-                            </div>
-                            <div class="posts-item"><a class="posts-item__title">Area Chart Example</a>
-                                <p class="posts-item__text">innerHTML, как можно понять из его названия, возвращает
-                                    HTML. Довольно часто innerHTML используется для получения или записи текста в
-                                    элемент. Тем не менее, вместо него желательно использовать textContent: этот ...</p>
-                                <p class="posts-item__autor">Posted by Sara</p><time
-                                    class="posts-item__text">2019-08-22</time>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="javascripts/notification.js"></script>
-    <script src="javascripts/post.js"></script>
-    <script src="javascripts/menu.js"></script>
-    <script src="javascripts/friends-posts.js"></script>
 </body>
 
 </html>

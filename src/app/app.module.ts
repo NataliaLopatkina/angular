@@ -1,22 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { AppRouterModule } from './app-router.module';
-import { ChildComponent } from '../components/Child/child.component';
-import { SignIn } from '../components/sign-in/sign-in.component';
-import { SignUp } from '../components/sign-up/sign-up.component';
+import { SignInComponent } from '../components/sign-in/sign-in.component';
+import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { HomeComponent } from '../components/home/home.component';
 import { MyPostsComponent } from '../components/my-posts/my-posts.component';
 import { FriendsPostsComponent } from '../components/friends-posts/friends-posts.component';
 import { AddPostComponent } from '../components/add-post/add-post.component';
+import { HeaderComponent } from '../components/header/header.component';
+import { NavComponent } from '../components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent,
-    SignIn,
-    SignUp,
+    SignInComponent,
+    SignUpComponent,
+    HeaderComponent,
+    NavComponent,
     HomeComponent,
     MyPostsComponent,
     FriendsPostsComponent,
@@ -25,6 +29,7 @@ import { AddPostComponent } from '../components/add-post/add-post.component';
   imports: [
     BrowserModule,
     AppRouterModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

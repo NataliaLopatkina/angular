@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+// Import the User model
+
+import { User } from '../../classes/user/User';
  
 @Component({
   selector: 'sign-in',
@@ -6,5 +10,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./sign-in.component.scss']
 })
 
-export class SignIn {
+export class SignInComponent implements OnInit {
+  private user: User;
+
+  constructor() { }
+
+  ngOnInit() {
+    this.user = new User({
+      email: '',
+      password: '',
+    })
+  }
 }

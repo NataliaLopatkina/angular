@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { SignIn } from '../components/sign-in/sign-in.component';
-import { SignUp } from '../components/sign-up/sign-up.component';
+import { SignInComponent } from '../components/sign-in/sign-in.component';
+import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { HomeComponent } from '../components/home/home.component';
 import { MyPostsComponent } from '../components/my-posts/my-posts.component';
 import { FriendsPostsComponent } from '../components/friends-posts/friends-posts.component';
@@ -9,10 +9,10 @@ import { AddPostComponent } from '../components/add-post/add-post.component';
 
 const routes: Routes = [
     {
-        path: '', component: SignIn
+        path: '', component: SignInComponent
     },
     {
-        path: 'sign-up', component: SignUp
+        path: 'sign-up', component: SignUpComponent
     },
 
     {
