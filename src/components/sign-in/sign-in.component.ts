@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-// Import the User model
-
-import { User } from '../../classes/user/User';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
  
 @Component({
   selector: 'sign-in',
@@ -11,14 +8,17 @@ import { User } from '../../classes/user/User';
 })
 
 export class SignInComponent implements OnInit {
-  private user: User;
-
   constructor() { }
 
   ngOnInit() {
-    this.user = new User({
-      email: '',
-      password: '',
-    })
+  }
+
+  profileForm = new FormGroup({
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  });
+
+  onSubmit() {
+    console.log(this.profileForm);
   }
 }

@@ -407,7 +407,7 @@ body a {
     cursor: pointer;
     outline: none;
     display: block;
-    transition-property: background, color;
+    transition-property: background, color, border;
     transition-duration: 0.25s;
     transition-timing-function: ease;
 
@@ -418,6 +418,12 @@ body a {
     &:hover {
       background: #ffffff;
       color: #6497b1;
+    }
+
+    &:disabled {
+      background: #dcdcdc;
+      border: 1px solid #dcdcdc;
+      color: #ffffff;
     }
 }
 
@@ -476,16 +482,8 @@ body a {
             box-shadow: 0 0 8px rgba(100, 151, 177, 0.5);
         }
 
-        &.invalid {
-            border: 1px solid red;
-
-            & + .error {
-                display: block;
-            }
-
-            & + .search__button + .error {
-                display: block;
-            }
+        &.ng-invalid.ng-touched {
+          border: 1px solid red;
         }
     }
 
@@ -534,14 +532,10 @@ body a {
 /* Error styles */
 
 .error {
+    display: block;
     text-align: right;
     color: red;
     margin-top: 5px;
-    display: none;
-
-    &.active {
-      display: block;
-    }
 
     &--user {
       background: rgba(225, 36, 0, 0.3);
