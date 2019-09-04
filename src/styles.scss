@@ -482,8 +482,12 @@ body a {
             box-shadow: 0 0 8px rgba(100, 151, 177, 0.5);
         }
 
-        &.ng-invalid.ng-touched {
+        &.ng-dirty.ng-invalid {
           border: 1px solid red;
+        }
+
+        &.ng-valid {
+          border: 1px solid green;
         }
     }
 
@@ -501,7 +505,7 @@ body a {
         right: 15px;
         margin: auto;
 
-        &.not-show {
+        &.active{
             opacity: 0.5;
 
             &:after {

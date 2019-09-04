@@ -19,20 +19,26 @@
                     <div class="posts-content">
                         <div class="add-post">
                             <h1 class="add-post__title">Add post</h1>
-                            <form class="form add-post__form" onsubmit="return false" novalidate="">
+                            <form class="form add-post__form" [formGroup]="postForm" (ngSubmit)="onSubmit()">
                                 <div class="form__item">
                                     <label class="form__label" for="title">Title</label>
-                                    <input class="form__input" type="text" id="title" placeholder="Title" required="">
-                                    <span class="error">Title is required!</span>
+                                    <input class="form__input" type="text" id="title" placeholder="Title"
+                                        formControlName="title" required>
+                                    <div *ngIf="postForm.controls['title'].errors && !postForm.controls['title'].pristine">
+                                        <span class="error" *ngIf="postForm.controls['title'].errors.required">Title is required!</span>
+                                    </div>
                                 </div>
                                 <div class="form__item">
                                     <label class="form__label" for="text-post">Text</label>
-                                    <textarea class="form__input add-post__input" id="text-post" placeholder="Enter text"
-                                        required="">
+                                    <textarea class="form__input add-post__input" id="text-post"
+                                        placeholder="Enter text" formControlName="text" required>
                                     </textarea>
-                                    <span class="error">Text is required!</span>
+                                    <div *ngIf="postForm.controls['text'].errors && !postForm.controls['text'].pristine">
+                                        <span class="error" *ngIf="postForm.controls['text'].errors.required">Text is required!</span>
+                                    </div>
                                 </div>
-                                <button class="button add-post__button">Add post</button>
+                                <button class="button add-post__button" type="submit" [disabled]="!postForm.valid">Add
+                                    post</button>
                             </form>
                         </div>
                     </div>

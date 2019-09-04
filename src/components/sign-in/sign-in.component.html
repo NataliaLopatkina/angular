@@ -16,31 +16,30 @@
             <div class="box">
                 <div class="authentication page__authentication">
                     <div class="form">
-                        <form class="form__content" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                        <form class="form__content" [formGroup]="profileForm">
                             <h1 class="form__title">Sign-in</h1>
                             <div class="form__item">
                                 <label class="form__label" for="email">Login or email</label>
                                 <input class="form__input" type="email" id="email" formControlName="email"
                                     placeholder="john@yandex.ru" required>
-                                <div *ngIf="profileForm.controls['email'].invalid && profileForm.controls['email'].touched"
-                                    class="error">
-                                    <span>Email is required!</span>
+                                <div *ngIf="profileForm.controls['email'].errors && !profileForm.controls['email'].pristine">
+                                    <span class="error" *ngIf="profileForm.controls['email'].errors.required">Email is required!</span>
+                                    <span class="error" *ngIf="profileForm.controls['email'].errors.pattern">Email is not valid!</span>
                                 </div>
-
                             </div>
                             <div class="form__item">
                                 <label class="form__label" for="password">Password</label>
                                 <div class="form__password">
                                     <input class="form__input" type="password" id="password" formControlName="password"
-                                        placeholder="12345678" minlength="6" required>
-                                    <div *ngIf="profileForm.controls['password'].invalid && profileForm.controls['password'].touched"
-                                        class="error">
-                                        <span>Password is required!</span>
-                                    </div>
-                                    <button class="form__password-button" button="submit">
-                                        <!-- <img class="form__password-img" src="images/svg-icon/eye.svg"
-                                            alt="Show password"> -->
+                                        placeholder="12345678" minlength="6" required #input>
+                                    <button class="form__password-button" button="type" [class.active]="show === true" (click)="showPassword(input)">
+                                        <img class="form__password-img" src="../../assets/images/eye.svg" alt="Show password">
                                     </button>
+                                    <div *ngIf="profileForm.controls['password'].errors && !profileForm.controls['password'].pristine">
+                                        <span class="error" *ngIf="profileForm.controls['password'].errors.required">Password is required!</span>
+                                        <span class="error" *ngIf="profileForm.controls['password'].errors.minlength">Minimum password length 5
+                                            characters</span>
+                                    </div>
                                 </div>
                             </div>
                             <button class="button form__button-send" type="submit" [disabled]="!profileForm.valid">

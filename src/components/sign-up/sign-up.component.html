@@ -16,37 +16,37 @@
             <div class="box">
                 <div class="authentication page__authentication">
                     <div class="form">
-                        <form class="form__content" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                        <form class="form__content" [formGroup]="profileForm">
                             <h1 class="form__title">Sign-up</h1>
                             <div class="form__item"><label class="form__label" for="name">Name</label>
                                 <input class="form__input" type="text" id="name" placeholder="John"
                                     formControlName="name" required>
-                                <div *ngIf="profileForm.controls['name'].invalid && profileForm.controls['name'].touched"
-                                    class="error">
-                                    <span>Name is required!</span>
+                                <div *ngIf="profileForm.controls['name'].errors && !profileForm.controls['name'].pristine">
+                                    <span class="error" *ngIf="profileForm.controls['name'].errors.required">Name is required!</span>
                                 </div>
                             </div>
                             <div class="form__item">
                                 <label class="form__label" for="email">Email</label>
                                 <input class="form__input" type="email" id="email" placeholder="john@yandex.ru"
-                                    formControlName="email" required>
-                                <div *ngIf="profileForm.controls['email'].invalid && profileForm.controls['email'].touched"
-                                    class="error">
-                                    <span>Email is required!</span>
+                                    formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                                <div *ngIf="profileForm.controls['email'].errors && !profileForm.controls['email'].pristine">
+                                    <span class="error" *ngIf="profileForm.controls['email'].errors.required">Email is required!</span>
+                                    <span class="error" *ngIf="profileForm.controls['email'].errors.pattern">Email is not valid!</span>
                                 </div>
                             </div>
                             <div class="form__item">
                                 <label class="form__label" for="password">Password</label>
                                 <div class="form__password">
                                     <input class="form__input" type="password" id="password" placeholder="12345678"
-                                        minlength="6" formControlName="password" required>
-                                    <div *ngIf="profileForm.controls['password'].invalid && profileForm.controls['password'].touched"
-                                        class="error">
-                                        <span>Password is required!</span>
-                                    </div>
-                                    <button class="form__password-button" button="type">
-                                        <!-- <img class="form__password-img" src="images/svg-icon/eye.svg" alt="Show password"> -->
+                                        minlength="5" formControlName="password" required #input>
+                                    <button class="form__password-button" [class.active]="show === true" button="type" (click)="showPassword(input)">
+                                        <img class="form__password-img" src="../../assets/images/eye.svg" alt="Show password">
                                     </button>
+                                    <div *ngIf="profileForm.controls['password'].errors && !profileForm.controls['password'].pristine">
+                                        <span class="error" *ngIf="profileForm.controls['password'].errors.required">Password is required!</span>
+                                        <span class="error" *ngIf="profileForm.controls['password'].errors.minlength">Minimum password length 5
+                                            characters</span>
+                                    </div>
                                 </div>
                             </div>
                             <button class="button form__button-send" type="submit" [disabled]="!profileForm.valid">
