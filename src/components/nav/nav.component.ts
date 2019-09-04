@@ -12,4 +12,9 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
+  active = false;
+
+  toggleNav() {
+    this.active = this.active = !this.active;
+  }
 }
