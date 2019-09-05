@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRouterModule } from './app-router.module';
 
 import { AppComponent } from './app.component';
-import { AppRouterModule } from './app-router.module';
 import { SignInComponent } from '../components/sign-in/sign-in.component';
 import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { HomeComponent } from '../components/home/home.component';
@@ -13,6 +13,8 @@ import { FriendsPostsComponent } from '../components/friends-posts/friends-posts
 import { AddPostComponent } from '../components/add-post/add-post.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { NavComponent } from '../components/nav/nav.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { NavComponent } from '../components/nav/nav.component';
     AppRouterModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

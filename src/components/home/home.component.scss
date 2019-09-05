@@ -97,3 +97,48 @@
         left: 0;
     }
 }
+
+// Users
+
+.users {
+    padding-top: 15px;
+}
+
+.users__item {
+    margin-bottom: 20px;
+}
+
+// User
+
+.user {
+    box-shadow: 0 0 10px #6497b1;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__name {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    &__following {
+        background: url('../../assets/images/like.svg');
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        padding: 0;
+
+        &.active {
+            background: url('../../assets/images/like-active.svg');
+        }
+    }
+
+    &__date-registration {
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
